@@ -17,7 +17,7 @@ module "dynamodb" {
     Env = "prod"
     App = "news"
   }
-  ttl_attribute_name = ""
+  ttl_attribute_name = "abc"
   attributes = [
     {
       name = "UserId"
@@ -48,6 +48,7 @@ module "dynamodb" {
       non_key_attributes = ["GameTitle"]
     },
   ]
+  replicas = ["us-east-2", ]
 }
 
 output "dynamodb_instance" {

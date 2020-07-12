@@ -77,6 +77,24 @@ variable "local_secondary_indexes" {
   default = []
 }
 
+variable "replicas" {
+  description = ""
+  type        = list(string)
+  default     = []
+}
+
+variable "stream" {
+  description = ""
+  type = object({
+    stream_enabled   = bool
+    stream_view_type = string
+  })
+  default = {
+    stream_enabled   = false
+    stream_view_type = ""
+  }
+}
+
 
 variable "tags" {
   description = "A map of tags to populate on the created table."

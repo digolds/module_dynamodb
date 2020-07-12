@@ -61,5 +61,18 @@ resource "aws_dynamodb_table" "basic_dynamodb_table" {
     }
   }
 
+  dynamic "replica" {
+    for_each = {
+      for rn in var.replicas :
+      rn => rn
+    }
+    content {
+      region_name = replica.value
+    }
+  }
+
+  stream_enabled   = var.stream["stream_enabled"]
+  stream_view_type = var.stream["stream_view_type"]
+
   tags = var.tags
 }
