@@ -40,6 +40,14 @@ module "dynamodb" {
     projection_type    = "INCLUDE"
     non_key_attributes = ["UserId"]
   }, ]
+  local_secondary_indexes = [
+    {
+      name               = "LocalGameTitleIndex"
+      range_key          = "TopScore"
+      projection_type    = "INCLUDE"
+      non_key_attributes = ["GameTitle"]
+    },
+  ]
 }
 
 output "dynamodb_instance" {

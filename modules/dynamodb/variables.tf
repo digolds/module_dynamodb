@@ -64,6 +64,20 @@ variable "global_secondary_indexes" {
   default = []
 }
 
+variable "local_secondary_indexes" {
+  description = ""
+  type = list(object(
+    {
+      name               = string
+      range_key          = string
+      projection_type    = string
+      non_key_attributes = list(string)
+    }
+  ))
+  default = []
+}
+
+
 variable "tags" {
   description = "A map of tags to populate on the created table."
   type        = map

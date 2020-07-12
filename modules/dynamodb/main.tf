@@ -26,6 +26,19 @@ resource "aws_dynamodb_table" "basic_dynamodb_table" {
     }
   }
 
+  dynamic "local_secondary_index" {
+    for_each = {
+      for l_index in var.local_secondary_indexes :
+      l_index["name"] => l_index
+    }
+    content {
+      name               = local_secondary_index.value["name"]
+      range_key          = local_secondary_index.value["range_key"]
+      projection_type    = local_secondary_index.value["projection_type"]
+      non_key_attributes = local_secondary_index.value["non_key_attributes"]
+    }
+  }
+
   dynamic "attribute" {
     for_each = {
       for a in var.attributes :
