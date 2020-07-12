@@ -90,8 +90,8 @@ variable "stream" {
     stream_view_type = string
   })
   default = {
-    stream_enabled   = false
-    stream_view_type = ""
+    stream_enabled   = null
+    stream_view_type = null
   }
 }
 

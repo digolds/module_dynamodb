@@ -40,6 +40,7 @@ module "dynamodb" {
     projection_type    = "INCLUDE"
     non_key_attributes = ["UserId"]
   }, ]
+
   local_secondary_indexes = [
     {
       name               = "LocalGameTitleIndex"
@@ -48,7 +49,6 @@ module "dynamodb" {
       non_key_attributes = ["GameTitle"]
     },
   ]
-  replicas = ["us-east-2", ]
 }
 
 output "dynamodb_instance" {
