@@ -20,6 +20,8 @@ Using the core code in **modules**, you are shipped with the following capabilit
 
 Except for **1. base table schema**, the other features can configure optionally. For example you can just create a base table with the following code:
 
+* Provision DynamoDB Table named my-test-table
+
 ```terraform
 terraform {
   required_version = "= 0.12.19"
@@ -53,9 +55,11 @@ output "dynamodb_instance" {
 }
 ```
 
-**NOTE**: you should replace `../../modules/dynamodb` with your location where the repository locates in your local computer or if you don't like to download this repository, you can replace with github url `git@github.com:2cloudlab/module_dynamodb.git?ref=v0.0.1`.
+**NOTE**: you should replace `../../modules/dynamodb` with your location where the repository locates in your local computer or if you don't like to download this repository, you can replace with github url `git@github.com:2cloudlab/module_dynamodb.git?ref=v0.0.1`, terraform will automatically clone the repository and refer it on behalf of you.
 
-You can also create local & global indexes and ttl with the following code:
+You can also create local & global indexes, tags, and ttl with the following code:
+
+* Provision DynamoDB Table, local & global indexs, tags, and ttl
 
 ```terraform
 terraform {
