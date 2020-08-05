@@ -55,7 +55,7 @@ output "dynamodb_instance" {
 }
 ```
 
-**NOTE**: you should replace `../../modules/dynamodb` with your location where the repository locates in your local computer or if you don't like to download this repository, you can replace with github url `git@github.com:2cloudlab/module_dynamodb.git?ref=v0.0.1`, terraform will automatically clone the repository and refer it on behalf of you.
+**NOTE**: you should replace `../../modules/dynamodb` with your location where the repository locates in your local computer or if you don't like to download this repository, you can replace with github url `github.com/2cloudlab/module_dynamodb?ref=v0.0.1`, terraform will automatically clone the repository and refer it on behalf of you.
 
 You can also create local & global indexes, tags, and ttl with the following code:
 
