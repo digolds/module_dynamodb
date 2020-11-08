@@ -1,5 +1,5 @@
 terraform {
-  required_version = "= 0.12.19"
+  required_version = "= 0.13.5"
 }
 
 resource "aws_dynamodb_table" "basic_dynamodb_table" {
